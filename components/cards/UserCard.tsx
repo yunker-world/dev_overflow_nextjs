@@ -24,8 +24,8 @@ const UserCard = async ({ user }: Props) => {
     >
       <article className="background-light900_dark200 light-border flex w-full flex-col items-center justify-center rounded-2xl border p-8">
         <Image
-          // TODO: src={user.picture}
-          src="/assets/images/site-logo.svg"
+          src={user.picture}
+          // src="/assets/images/site-logo.svg"
           alt="user profile picture"
           width={100}
           height={100}
