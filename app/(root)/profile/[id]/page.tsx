@@ -17,7 +17,7 @@ const Page = async ({ params, searchParams }: URLProps) => {
 
   return (
     <>
-      <div className="flex flex-col-reverse items-start justify-between">
+      <div className="flex flex-col-reverse items-start justify-between sm:flex-row">
         <div className="flex flex-col items-start gap-4 lg:flex-row">
           <Image
             src={userInfo?.user.picture}
