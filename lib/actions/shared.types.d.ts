@@ -28,8 +28,8 @@ export interface DeleteAnswerParams {
   path: string;
 }
 
-export interface searchParams {
-  query: string;
+export interface SearchParams {
+  query?: string | null;
   type?: string | null;
 }
 
