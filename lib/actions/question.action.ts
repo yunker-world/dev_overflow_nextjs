@@ -83,17 +83,14 @@ export async function createQuestion(params: CreateQuestionParams) {
 
     // Create the tags or get them if they already exist
     for (const tag of tags) {
-      console.log({ tag });
       const existingTag = await Tag.findOneAndUpdate(
         { name: { $regex: new RegExp(`^${tag}$`, "i") } },
         { $setOnInsert: { name: tag }, $push: { questions: question._id } },
         { upsert: true, new: true }
       );
-      console.log("existingTag._id:", existingTag._id);
 
       tagDocuments.push(existingTag._id);
     }
-    console.log({ tagDocuments });
 
     await Question.findByIdAndUpdate(question._id, {
       $push: { tags: { $each: tagDocuments } },
