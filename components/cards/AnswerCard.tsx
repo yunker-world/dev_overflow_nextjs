@@ -8,7 +8,7 @@ import EditDeleteAction from "../shared/EditDeleteAction";
 interface Props {
   _id: string;
   question: any;
-  author: { _id: string; name: string; picture: string };
+  author: { _id: string; name: string; picture: string; clerkId: string };
   upvotes: number;
   createdAt: Date;
   clerkId?: string | null;
